@@ -2,11 +2,11 @@ import Avocado from './index';
 import { DocumentCollection } from 'arangojs/collection';
 import { Database } from 'arangojs/database';
 
-export class Model {
+export class ModelEdge {
   private readonly connection: Avocado;
   private readonly model: DocumentCollection;
 
-  constructor(connection: Avocado, arango: Database, name: string, options:) {
+  constructor(connection: Avocado, arango: Database, name: string, options: {}) {
     this.connection = connection;
     this.model = arango.collection(name) as DocumentCollection;
 

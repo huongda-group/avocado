@@ -1,4 +1,4 @@
-import { Model } from './model';
+import { ModelEdge } from './model-edge';
 import { ConnectionInterface } from './interface';
 import { Database, LogLevelSetting, VersionInfo } from 'arangojs/database';
 
@@ -37,7 +37,7 @@ export default class Avocado {
     return this.arango;
   }
 
-  Model(name: string, options: any): Model {
-    return new Model(this, this.arango, name, options);
+  Model(name: string, options: any): ModelEdge {
+    return new ModelEdge(this, this.arango, name, options);
   }
 }
