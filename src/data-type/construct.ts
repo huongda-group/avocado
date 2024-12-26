@@ -6,13 +6,7 @@ export interface ConstructInterface<T = any> {
 }
 
 export default class Construct {
-  nullable: boolean;
-  default: any;
-
-  constructor(data: ConstructInterface) {
-    this.nullable = data.nullable || true;
-    this.default = data.default || undefined;
-  }
+  protected type: any;
 
   get() {
 

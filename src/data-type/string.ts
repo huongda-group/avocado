@@ -1,9 +1,7 @@
-import Construct, { ConstructInterface } from './construct';
+import Construct from './construct';
 
 export default class String extends Construct {
-  constructor(data: ConstructInterface) {
-    super(data);
-  }
+  public readonly _type!: string;
 
   get() {
     return 'string';

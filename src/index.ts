@@ -1,11 +1,10 @@
-import { ModelEdge } from './model-edge';
 import { ConnectionInterface } from './interface';
 import { Database, LogLevelSetting, VersionInfo } from 'arangojs/database';
 
 export default class Avocado {
   private readonly arango: Database;
   private readonly logging: Record<string, LogLevelSetting>;
-  private connected: boolean = false;
+  public connected: boolean = false;
 
   constructor(connection: ConnectionInterface) {
     this.arango = new Database({
@@ -35,9 +34,5 @@ export default class Avocado {
 
   Arango(): Database {
     return this.arango;
-  }
-
-  Model(name: string, options: any): ModelEdge {
-    return new ModelEdge(this, this.arango, name, options);
   }
 }
